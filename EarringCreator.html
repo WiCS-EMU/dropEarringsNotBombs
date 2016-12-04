@@ -17,11 +17,11 @@
             </div>
 
             <!-- Dropdowns -->
-            <div class="col-md-3">
+            <div class="col-md-6">
 
                 <!-- Sizes -->
                 <div class="form-group">
-                  <label for="sizes">Sizes</label>
+                  <label for="sizes">Size</label>
                   <!-- Vue Sizes model -->
                   <select v-model="earrings.size" class="form-control" id="size">
                     <option> Full </option>
@@ -30,7 +30,7 @@
 
                 <!-- Frames -->
                 <div class="form-group" v-show="earrings.size != ''">
-                  <label for="sizes">Frames</label>
+                  <label for="sizes">Frame</label>
                   <!-- Vue Frames model -->
                   <select v-model="earrings.frame" class="form-control" id="frames">
                     <option> Silver </option>
@@ -40,7 +40,7 @@
 
                 <!-- Styles -->
                 <div class="form-group" v-show="earrings.frame != ''">
-                  <label for="styles">Styles</label>
+                  <label for="styles">Style</label>
                   <!-- Vue Frames model -->
                   <select v-model="earrings.style" class="form-control" id="styles">
                     <!-- v-for="option in earrings.styles" track-by="$index" -->
