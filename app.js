@@ -44,7 +44,8 @@ $('input[name=hat-color]').on('change', function() {
    //alert($('input[name=hat-color]:checked').val()); 
    alert($(this).val());
    color_1 = $(this).val();
-   $('polygon').css({ fill: color_1 });
+   //to do: assign color_1 to the fill property on the polygon
+
 });
 /*
 $("input") // select the radio by its id
