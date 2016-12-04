@@ -220,6 +220,13 @@ body {
     letter-spacing: normal;
 }
 
+.colorPicker input:checked+label.white {
+    width: 90%;
+    opacity: 1;
+    color: #000;
+    letter-spacing: normal;
+}
+
 .affix {
     top: 50px;
     position: fixed;

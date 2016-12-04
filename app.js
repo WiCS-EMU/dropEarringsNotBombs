@@ -12,9 +12,10 @@ var app = new Vue({
               layer2: '',
               layer3: '',
               layer4: '',
-              layer5: '', 
+              layer5: '',
         },
         bead: '',
+        message: 'message', 
     },
     computed: {
       image: function() {
@@ -24,7 +25,17 @@ var app = new Vue({
           return this.earrings.size;
       },
     },
+    methods: {
+      greet: function() {
+          console.log('test');
+
+      },
+    },
     ready: function() {
         console.log("Vue app instance loaded");
     },
-}});
+
+
+  }
+
+});
