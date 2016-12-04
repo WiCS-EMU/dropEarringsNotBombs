@@ -203,6 +203,12 @@ body {
     letter-spacing: normal;
 }
 
+.colorPicker label.white:hover {
+    opacity: 1;
+    color: #000;
+    letter-spacing: normal;
+}
+
 .colorPicker input {
     display: none;
 }
