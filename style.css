@@ -13,7 +13,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 1em;
-    background: #f5f5f5;
+    background: black;
     font: 100%/1.2 "Helvetica Neue";
     font-weight: 200;
     width: 100%;
@@ -230,4 +230,40 @@ body {
 .affix {
     top: 50px;
     position: fixed;
+}
+
+#earring-frame {
+	height: 533;
+	width: 250;
+	text-align: center;
+	display: block;
+	margin: auto;
+	
+	position: relative;
+	top: 20px;
+}
+
+#thread-full {
+	position: relative;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	top: -308px;
+}
+
+#overlay-1 {
+	
+	position: relative;
+	text-align: center;
+	display: block;
+	
+	opacity: .5;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	top: -314px;
+	height: 312px;
+	width: 250px;
 }

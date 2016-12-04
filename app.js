@@ -30,9 +30,41 @@ var app = new Vue({
     },
     ready: function() {
         console.log("Vue app instance loaded");
+		
     },
 
 
   }
 
 });
+
+var color_1;
+
+$('input[name=hat-color]').on('change', function() {
+   //alert($('input[name=hat-color]:checked').val()); 
+   alert($(this).val());
+   color_1 = $(this).val();
+   $('polygon').css({ fill: color_1 });
+});
+/*
+$("input") // select the radio by its id
+		.change(function(){ // bind a function to the change event
+        if( $(this).is(":checked") ){ // check if the radio is checked
+            var val = $(this).val(); // retrieve the value
+			alert( val );
+        }
+		alert("method called");
+    });
+*/
+
+/*$( "input" ).change(function() {
+  
+	var selectedVal = "a";
+	var selected = $("#cpID input[type='radio']:checked");
+	if (selected.length > 0) {
+		selectedVal = selected.val();
+	}
+	alert( selectedVal );
+	
+});
+*/

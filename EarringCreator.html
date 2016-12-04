@@ -12,8 +12,60 @@
         <h1 class="hero-title"> Custom Earrings </h1>
         <br />
         <div class="row">
-          <div class="col-md-6 border">
-                 {{ earrings | json }}
+          <div class="col-md-6">
+                 <!--{{ earrings | json }}-->
+				 
+				 
+
+			<div id="earring-frame">
+			
+					<img src="frame_gold.png" alt="Gold Frame" width="250" height="533">
+						
+				</div>
+			
+				<div class="thread" id="thread-full">
+			
+					<img src="thread_full.png" width="248" height="315">
+					
+						<svg id = "overlay-1">
+						<polygon id = "polyID-1" points=
+							"110,0
+							125,15
+							50,100
+							20,150
+							15,175
+							15,200
+							22,225
+							35,200
+							47,175
+							60,150
+							80,125
+							80,125
+							98,115
+							125,110
+							150,115
+							160,120
+							180,140
+							190,160
+							210,220
+							
+							220,240
+							228,220
+							230,200
+							230,180
+							230,160
+										
+							200,90
+							148,15
+							160,0"
+						style="fill:green;" />
+			
+						</svg>		
+						
+			</div>
+				 
+				 
+				 
           </div>
 
 
@@ -52,7 +104,7 @@
                 <!-- Layer 1-->
                 <div class="form-group" v-show="earrings.style != ''">
                   <label for="layer1">Layer One</label>
-                  <div class="colorPicker">
+                  <div class="colorPicker" id="cpID">
                     <!-- Color Picker -->
                     <div class="row">
                       <input v-model="earrings.layer1" type="radio" name="hat-color" value="venetian-red" id="hat-color-venetian-red" class="venetian-red"/>
