@@ -5,17 +5,14 @@ var app = new Vue({
         size: '',
         frame: '',
         style: '',
-        color: '',
         //Computed properties based on styles/layers
-        color: {
               layer1: '',
               layer2: '',
               layer3: '',
               layer4: '',
               layer5: '',
-        },
         bead: '',
-        message: 'message', 
+        message: 'message',
     },
     computed: {
       image: function() {
