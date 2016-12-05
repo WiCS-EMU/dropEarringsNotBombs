@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Earring Creator </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="app">
+    <div class="container">
+        <h1 class="hero-title"> Custom Earrings </h1>
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+                 <!--{{ earrings | json }}-->
+
+    			  <div id="earring-frame">
+    					<img src="frame_gold.png" alt="Gold Frame" width="250" height="533">
+    				</div>
+
+				    <div class="thread" id="thread-full">
+
+					         <img src="thread_full.png" width="248" height="315">
+
+						<svg id="overlay-1">
+  						<polygon id="polyID-1" points=
+              	"110,0
+  							125,15
+  							50,100
+  							20,150
+  							15,175
+  							15,200
+  							22,225
+  							35,200
+  							47,175
+  							60,150
+  							80,125
+  							80,125
+  							98,115
+  							125,110
+  							150,115
+  							160,120
+  							180,140
+  							190,160
+  							210,220
+
+  							220,240
+  							228,220
+  							230,200
+  							230,180
+  							230,160
+
+  							200,90
+  							148,15
+  							160,0"
+  						style="fill:green;" />
+						</svg>
+
+			</div>
+
+
+
+          </div>
+
+
+            <!-- Dropdowns -->
+            <div class="col-md-3">
+
+                <!-- Sizes -->
+                <div class="form-group">
+                  <label for="sizes">Sizes</label>
+                  <!-- Vue Sizes model -->
+                  <select v-model="earrings.size" class="form-control" id="size">
+                    <option> Full </option>
+                  </select>
+                </div>
+
+                <!-- Frames -->
+                <div class="form-group" v-show="earrings.size != ''">
+                  <label for="sizes">Frames</label>
+                  <!-- Vue Frames model -->
+                  <select v-model="earrings.frame" class="form-control" id="frames">
+                    <option> Silver </option>
+                    <option> Gold </option>
+                  </select>
+                </div>
+
+                <!-- Styles -->
+                <div class="form-group" v-show="earrings.frame != ''">
+                  <label for="styles">Styles</label>
+                  <!-- Vue Frames model -->
+                  <select v-model="earrings.style" class="form-control" id="styles">
+                    <!-- v-for="option in earrings.styles" track-by="$index" -->
+                    <option> Classic </option>
+                  </select>
+                </div>
+
+                <!-- Layer 1-->
+                <div class="form-group" v-show="earrings.style != ''">
+                  <label for="layer1">Layer One</label>
+                  <colorpicker></colorpicker>
+
+                </div>
+
+
+                <!-- Beads -->
+                <div class="form-group" v-show="earrings.layer5 != ''">
+                  <label for="beads">Beads</label>
+                  <!-- Vue Frames model -->
+                  <select v-model="earrings.bead" class="form-control" id="beads">
+                    <option> Some </option>
+                    <option> None </option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+</body>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap  -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+    <!--Vue.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
+
+    <script src="./components.js"></script>
+    <script src="./app.js"></script>
+
+</html>
