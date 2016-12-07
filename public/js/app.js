@@ -1,4 +1,3 @@
-
 var app = new Vue({
     el: "#app",
     data: {
@@ -23,6 +22,9 @@ var app = new Vue({
           selected.push(this.earrings.size);
           return this.earrings.size;
       },
+      json: function() {
+        return JSON.stringify(this.data);
+      }
     },
     methods: {
 
@@ -30,9 +32,14 @@ var app = new Vue({
     created: function() {
       console.log("Vue app instance created");
       var self = this;
-      //The coloripicker layer-changed listener
+
+      //The colorpicker layer-changed listener
       bus.$on('layer-changed', function (layer) {
-       Vue.set(self, 'layer', layer)
+       Vue.set(self,  'earrings.color.layer1', layer)
+      });
+
+      bus.$on('test', function(message) {
+        console.log(message);
       });
 
     },

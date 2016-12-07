@@ -1,5 +1,7 @@
 // All available colors stored as a js variable
+// Is an array of arrays, where each sub-array contains 8 values
 var availableColors = [
+        [
               { value: 'venetian-red' },
               { value: 'hot-pink'},
               { value: 'fuchsia' },
@@ -8,6 +10,8 @@ var availableColors = [
               { value: 'coral-pink' },
               { value: 'burnt-orange' },
               { value: 'gold-poppy' },
+        ],
+        [
               { value: 'yellow' },
               { value: 'light-yellow' },
               { value: 'mint-green' },
@@ -16,6 +20,8 @@ var availableColors = [
               { value: 'forest-green' },
               { value: 'teal' },
               { value: 'sky-blue' },
+        ],
+        [
               { value: 'powder-blue' },
               { value: 'cobalt' },
               { value: 'orchid' },
@@ -24,4 +30,6 @@ var availableColors = [
               { value: 'white' },
               { value: 'cocoa-brown' },
               { value: 'tan' },
-          ];
+
+        ],
+];

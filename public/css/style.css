@@ -47,7 +47,6 @@ body {
     display: inline-table;
     width: 100%;
     max-width: 40em;
-    background: #fff;
     padding: 2px;
     border-radius: 0.35em;
     box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
@@ -255,11 +254,9 @@ body {
 }
 
 #overlay-1 {
-
 	position: relative;
 	text-align: center;
 	display: block;
-
 	opacity: .5;
 	margin-left: auto;
 	margin-right: auto;
