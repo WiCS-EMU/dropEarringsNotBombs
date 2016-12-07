@@ -1,10 +1,10 @@
 var bus = new Vue();
 
 Vue.component('colorpicker', {
-  props: ["layername"],
+  props: ["layername", "earringcolor"],
   data: function() {
       return {
-        currentcolor: this.layername,
+        currentcolor: '',
         availableColors: availableColors,
       }
   },
@@ -16,7 +16,7 @@ Vue.component('colorpicker', {
     }
   },
   created: function() {
-    console.log(this.layername);
+    console.log(this.earringcolor);
   },
   template:
     `
