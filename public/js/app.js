@@ -14,6 +14,7 @@ var app = new Vue({
           layer5: availableColors,
         },
         bead: '',
+      },
     },
     computed: {
       image: function() {
@@ -33,15 +34,18 @@ var app = new Vue({
       console.log("Vue app instance created");
       var self = this;
 
+
       //The colorpicker layer-changed listener
-      bus.$on('layer-changed', function (layer) {
-       Vue.set(self,  'earrings.color.layer1', layer)
+      bus.$on('layer1', function (layer) {
+        console.log(layer);
+        self.earrings.color.layer1 = layer;
       });
 
-      bus.$on('test', function(message) {
-        console.log(message);
+      //The colorpicker layer-changed listener
+      bus.$on('layer2', function (layer) {
+        console.log(layer);
+        self.earrings.color.layer2 = layer;
       });
 
     },
-  }
 });

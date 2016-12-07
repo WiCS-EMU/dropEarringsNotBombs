@@ -1,19 +1,22 @@
 var bus = new Vue();
 
 Vue.component('colorpicker', {
+  props: ["layername"],
   data: function() {
       return {
-        currentlayer: availableColors,
+        currentcolor: this.layername,
         availableColors: availableColors,
       }
   },
   watch: {
-    'currentlayer': function (currentlayer, oldLayer) {
-      console.log('currentlayer changed from %s to %s', oldLayer, currentlayer);
-      bus.$emit('test', 'hi');
-
-      bus.$emit('layer-changed', currentlayer);
+    'currentcolor': function (currentcolor, oldcolor) {
+      console.log('currentcolor changed from %s to %s', oldcolor, currentcolor);
+      console.log(this.layername);
+      bus.$emit(this.layername, currentcolor);
     }
+  },
+  created: function() {
+    console.log(this.layername);
   },
   template:
     `
@@ -22,7 +25,7 @@ Vue.component('colorpicker', {
       <template v-for="subarray in availableColors">
           <div class="row">
             <template v-for="color in subarray">
-                <input v-model="currentlayer"  type="radio" name="hat-color" :value="color.value"  :class="color.value" :id="color.value "/>
+                <input v-model="currentcolor"  type="radio" name="hat-color" :value="color.value"  :class="color.value" :id="color.value"/>
                 <label :for="color.value" :class="color.value">{{ color.value }}</label>
             </template>
           </div>

@@ -17,6 +17,10 @@
                 <!-- Image row -->
                 <div class="col-md-6">
                   {{ earrings.color.layer1 }}
+                  <!-- {{ earrings.color.layer2 }}
+                  {{ earrings.color.layer3 }}
+                  {{ earrings.color.layer4 }}
+                  {{ earrings.color.layer5 }} -->
                 </div>
 
                 <!-- Dropdowns -->
@@ -51,8 +55,8 @@
                     <template v-for="(layer, layerName) in earrings.color">
                       <!-- v-show="earrings.color.layer != ''" -->
                       <div class="form-group">
-                          <label :for="layer">Layer {{ layerName}}</label>
-                          <colorpicker></colorpicker>
+                          <label :for="layer">Layer {{ layerName }}</label>
+                          <colorpicker :layername="layerName"></colorpicker>
                       </div>
                     </template>
 
