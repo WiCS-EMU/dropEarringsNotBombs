@@ -16,7 +16,7 @@
 
                 <!-- Image row -->
                 <div class="col-md-6">
-
+                  {{ json }}
                 </div>
 
                 <!-- Dropdowns -->
@@ -47,8 +47,8 @@
                         </select>
                     </div>
 
-                    <!-- Layer 1-->
-                    <div class="form-group" v-show="earrings.style != ''">
+                    <!-- Layer 1 v-show="earrings.style != ''" -->
+                    <div class="form-group" >
                         <label for="layer1">Layer One </label>
                         <colorpicker></colorpicker>
                     </div>

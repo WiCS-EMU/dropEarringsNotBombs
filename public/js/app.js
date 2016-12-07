@@ -23,6 +23,9 @@ var app = new Vue({
           selected.push(this.earrings.size);
           return this.earrings.size;
       },
+      json: function() {
+        return JSON.stringify(this.data);
+      }
     },
     methods: {
 

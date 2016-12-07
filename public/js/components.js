@@ -13,14 +13,15 @@ Vue.component('colorpicker', {
   template:
     `
     <div class="colorPicker">
-      <div class="row">
-        <!-- only display 8 per row -->
-        <template v-for="(color, index) in availableColors">
-          <input v-model="layer"  type="radio" name="hat-color" :value="color.value"  :class="color.value" :id="color.value "/>
-          <label :for="color.value" :class="color.value">{{ color.value }}</label>
-        </template>
-      </div>
+      <!-- only display 8 per row -->
+      <template v-for="subarray in availableColors">
+          <div class="row">
+            <template v-for="color in subarray">
+                <input v-model="layer"  type="radio" name="hat-color" :value="color.value"  :class="color.value" :id="color.value "/>
+                <label :for="color.value" :class="color.value">{{ color.value }}</label>
+            </template>
+          </div>
+      </template>
 
-    </div>
     `,
 });
