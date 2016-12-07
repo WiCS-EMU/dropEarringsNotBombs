@@ -1,7 +1,6 @@
 var bus = new Vue();
 
 Vue.component('colorpicker', {
-  props: ['layer'],
   data: function() {
       return {
         currentlayer: availableColors,
@@ -11,8 +10,9 @@ Vue.component('colorpicker', {
   watch: {
     'currentlayer': function (currentlayer, oldLayer) {
       console.log('currentlayer changed from %s to %s', oldLayer, currentlayer);
-      console.log(this.layer);
-      bus.$emit(this.layer+"-changed", currentlayer);
+      bus.$emit('test', 'hi');
+
+      bus.$emit('layer-changed', currentlayer);
     }
   },
   template:

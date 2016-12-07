@@ -16,7 +16,7 @@
 
                 <!-- Image row -->
                 <div class="col-md-6">
-                  {{ json }}
+                  {{ earrings.color.layer1 }}
                 </div>
 
                 <!-- Dropdowns -->
@@ -52,7 +52,7 @@
                       <!-- v-show="earrings.color.layer != ''" -->
                       <div class="form-group">
                           <label :for="layer">Layer {{ layerName}}</label>
-                          <colorpicker :currentlayer="layerName"></colorpicker>
+                          <colorpicker></colorpicker>
                       </div>
                     </template>
 

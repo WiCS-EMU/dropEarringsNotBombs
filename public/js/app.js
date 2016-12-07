@@ -1,4 +1,3 @@
-
 var app = new Vue({
     el: "#app",
     data: {
@@ -33,12 +32,14 @@ var app = new Vue({
     created: function() {
       console.log("Vue app instance created");
       var self = this;
-      //The coloripicker layer-changed listener
-      bus.$on('layer-changed', function (layer, event) {
-       Vue.set(self,  'layer', layer)
-       console.log(layer);
-       console.log('hit')
-       console.log(event);
+
+      //The colorpicker layer-changed listener
+      bus.$on('layer-changed', function (layer) {
+       Vue.set(self,  'earrings.color.layer1', layer)
+      });
+
+      bus.$on('test', function(message) {
+        console.log(message);
       });
 
     },
