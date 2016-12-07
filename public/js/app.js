@@ -1,3 +1,4 @@
+
 var app = new Vue({
     el: "#app",
     data: {
@@ -5,31 +6,35 @@ var app = new Vue({
         size: '',
         frame: '',
         style: '',
-        //Computed properties based on styles/layers
-              layer1: '',
-              layer2: '',
-              layer3: '',
-              layer4: '',
-              layer5: '',
+        color: {
+          //Contains an array of the colors available for the given layer
+          layer1: availableColors,
+          layer2: availableColors,
+          layer3: availableColors,
+          layer4: availableColors,
+          layer5: availableColors,
+        },
         bead: '',
-        message: 'message',
     },
     computed: {
       image: function() {
-          //Where selected is an array of the currenlty selected earring options
+          //Where selected is an array of the currently selected earring options
           var selected = [];
           selected.push(this.earrings.size);
           return this.earrings.size;
       },
     },
     methods: {
-      greet: function() {
-          console.log('test');
 
-      },
     },
-    ready: function() {
-        console.log("Vue app instance loaded");
+    created: function() {
+      console.log("Vue app instance created");
+      var self = this;
+      //The coloripicker layer-changed listener
+      bus.$on('layer-changed', function (layer) {
+       Vue.set(self, 'layer', layer)
+      });
+
     },
   }
 });
