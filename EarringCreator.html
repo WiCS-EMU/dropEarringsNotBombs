@@ -47,14 +47,18 @@
                         </select>
                     </div>
 
-                    <!-- Layer 1 v-show="earrings.style != ''" -->
-                    <div class="form-group" >
-                        <label for="layer1">Layer One </label>
-                        <colorpicker></colorpicker>
-                    </div>
+                    <!-- Colors  -->
+                    <template v-for="(layer, layerName) in earrings.color">
+                      <!-- v-show="earrings.color.layer != ''" -->
+                      <div class="form-group">
+                          <label :for="layer">Layer {{ layerName}}</label>
+                          <colorpicker :currentlayer="layerName"></colorpicker>
+                      </div>
+                    </template>
+
 
                     <!-- Beads -->
-                    <div class="form-group" v-show="false">
+                    <div class="form-group" v-show="earrings.color.layer5">
                         <label for="beads"> Beads </label>
                         <select v-model="earrings.bead" class="form-control">
                           <option> Some </option>

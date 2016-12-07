@@ -34,8 +34,11 @@ var app = new Vue({
       console.log("Vue app instance created");
       var self = this;
       //The coloripicker layer-changed listener
-      bus.$on('layer-changed', function (layer) {
-       Vue.set(self, 'layer', layer)
+      bus.$on('layer-changed', function (layer, event) {
+       Vue.set(self,  'layer', layer)
+       console.log(layer);
+       console.log('hit')
+       console.log(event);
       });
 
     },
