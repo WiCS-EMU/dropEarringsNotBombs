@@ -33,7 +33,7 @@ var app = new Vue({
       }
     },
     methods: {
-      registerLayers: function() {
+      registerColorpickerListeners: function() {
         //Register all the layer event bus listeners
         bus.$on('layer1', function (layer) {
           app.earrings.color.layer1 = layer;
@@ -50,12 +50,18 @@ var app = new Vue({
         bus.$on('layer5', function (layer) {
           app.earrings.color.layer5 = layer;
         });
-      }
+      },
+      registerSelectorListeners: function() {
+        bus.$on('Frames', function (frame) {
+          app.earrings.frame = frame;
+        });
+      },
     },
     created: function() {
       console.log("Vue app instance created");
       var self = this;
-      this.registerLayers();
-      
+      this.registerColorpickerListeners();
+      this.registerSelectorListeners();
+
     },
 });

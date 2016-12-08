@@ -27,18 +27,24 @@ Vue.component('selector', {
   props: ['model', 'available', 'title'],
   data: function() {
     return {
-      selectorModel: '',
+      currentmodel: '',
     }
   },
   created: function() {
-
+    console.log(this.model);
+  },
+  watch: {
+    'currentmodel': function(currentmodel, oldModel) {
+      console.log(this.title+' model value changed');
+      bus.$emit(this.title, currentmodel);
+    }
   },
   template:
     `
       <div class="form-group">
           <label for="sizes">{{ title }}</label>
-          <select v-model="selectorModel" class="form-control">
-            <option v-for="item in available" :value="item.value">{{ item.value }}</option>
+          <select v-model="currentmodel" class="form-control">
+            <option v-for="item in available" :value="item">{{ item.value }}</option>
           </select>
       </div>
     `
