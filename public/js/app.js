@@ -55,6 +55,9 @@ var app = new Vue({
         bus.$on('Frames', function (frame) {
           app.earrings.frame = frame;
         });
+        bus.$on('Styles', function (style) {
+          app.earrings.style = style;
+        });
       },
     },
     created: function() {
