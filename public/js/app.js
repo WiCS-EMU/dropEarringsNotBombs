@@ -33,27 +33,30 @@ var app = new Vue({
       }
     },
     methods: {
+      registerLayers: function() {
+        //Register all the layer event bus listeners
+        bus.$on('layer1', function (layer) {
+          app.earrings.color.layer1 = layer;
+        });
+        bus.$on('layer2', function (layer) {
+          app.earrings.color.layer2 = layer;
+        });
+        bus.$on('layer3', function (layer) {
+          app.earrings.color.layer3 = layer;
+        });
+        bus.$on('layer4', function (layer) {
+          app.earrings.color.layer4 = layer;
+        });
+        bus.$on('layer5', function (layer) {
+          app.earrings.color.layer5 = layer;
+        });
+      }
     },
     created: function() {
       console.log("Vue app instance created");
       var self = this;
+      this.registerLayers();
 
-      //Register all the layer listeners
-      bus.$on('layer1', function (layer) {
-        self.earrings.color.layer1 = layer;
-      });
-      bus.$on('layer2', function (layer) {
-        self.earrings.color.layer2 = layer;
-      });
-      bus.$on('layer3', function (layer) {
-        self.earrings.color.layer3 = layer;
-      });
-      bus.$on('layer4', function (layer) {
-        self.earrings.color.layer4 = layer;
-      });
-      bus.$on('layer5', function (layer) {
-        self.earrings.color.layer5 = layer;
-      });
 
     },
 });
