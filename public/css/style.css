@@ -89,10 +89,12 @@ body {
   position: relative;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .image2 {
   position: absolute;
-  top: 220px;
+  top: 205px;
   left: 170px;
+  z-index: 1;
 }
