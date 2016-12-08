@@ -2,7 +2,11 @@ var app = new Vue({
     el: "#app",
     data: {
       earrings: {
+        //TODO make ajax with laravel
         availableStyles: availableStyles,
+        availableFrames: availableFrames,
+        availableSizes: availableSizes,
+        availableBeads: availableBeads,
         size: '',
         frame: '',
         style: '',

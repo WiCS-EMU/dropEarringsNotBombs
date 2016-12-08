@@ -27,29 +27,13 @@
                 <div class="col-md-3">
 
                     <!-- Sizes -->
-                    <div class="form-group">
-                        <label for="sizes">Sizes</label>
-                        <select v-model="earrings.size" class="form-control">
-                          <option> Full </option>
-                        </select>
-                    </div>
+                    <selector :model="earrings.size" :available="earrings.availableSizes" title="Sizes"></selector>
 
                     <!-- Frames -->
-                    <div class="form-group">
-                        <label for="sizes">Frames</label>
-                        <select v-model="earrings.frame" class="form-control">
-                          <option>Silver </option>
-                          <option>Gold </option>
-                        </select>
-                    </div>
+                    <selector :model="earrings.frame" :available="earrings.availableFrames" title="Frames"></selector>
 
                     <!-- Styles -->
-                    <div class="form-group">
-                        <label for="styles">Styles</label>
-                        <select v-model="earrings.style" class="form-control">
-                          <option v-for="style in earrings.availableStyles" :value="style.value">{{ style.value }}</option>
-                        </select>
-                    </div>
+                    <selector :model="earrings.style" :available="earrings.availableStyles" title="Styles"></selector>
 
                     <!-- Colors  -->
                     <template v-for="(layer, layerName) in earrings.color">
@@ -60,13 +44,8 @@
                     </template>
 
                     <!-- Beads -->
-                    <div class="form-group">
-                        <label for="beads"> Beads </label>
-                        <select v-model="earrings.bead" class="form-control">
-                          <option> Some </option>
-                          <option> None </option>
-                        </select>
-                    </div>
+                    <selector :model="earrings.bead" :available="earrings.availableBeads" title="Beads"></selector>
+
                 </div>
             </div>
         </div>
@@ -79,6 +58,9 @@
 <!-- Data js files -->
 <script src="./public/js/data/colors.js"></script>
 <script src="./public/js/data/styles.js"></script>
+<script src="./public/js/data/frames.js"></script>
+<script src="./public/js/data/sizes.js"></script>
+<script src="./public/js/data/beads.js"></script>
 
 
 <!-- Bootstrap  -->

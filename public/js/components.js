@@ -21,3 +21,20 @@ Vue.component('colorpicker', {
       </select>
     `,
 });
+
+//The select inputs
+Vue.component('selector', {
+  props: ['model', 'available', 'title'],
+  created: function() {
+
+  },
+  template:
+    `
+      <div class="form-group">
+          <label for="sizes">{{ title }}</label>
+          <select v-model="model" class="form-control">
+            <option v-for="item in available" :value="item.value">{{ item.value }}</option>
+          </select>
+      </div>
+    `
+});
