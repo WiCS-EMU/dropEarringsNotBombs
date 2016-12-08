@@ -1,7 +1,7 @@
 var bus = new Vue();
 
 Vue.component('colorpicker', {
-  props: ["layername", "earringcolor"],
+  props: ["layername"],
   data: function() {
       return {
         currentcolor: '',
@@ -16,7 +16,7 @@ Vue.component('colorpicker', {
     }
   },
   created: function() {
-    console.log(this.earringcolor);
+    console.log(this.layername);
   },
   template:
     `
@@ -25,7 +25,7 @@ Vue.component('colorpicker', {
       <template v-for="subarray in availableColors">
           <div class="row">
             <template v-for="color in subarray">
-                <input v-model="currentcolor"  type="radio" name="hat-color" :value="color.value"  :class="color.value" :id="color.value"/>
+                <input v-model="currentcolor"  type="radio" name="hat-color" :value="color.value"  :class="color.value" />
                 <label :for="color.value" :class="color.value">{{ color.value }}</label>
             </template>
           </div>
