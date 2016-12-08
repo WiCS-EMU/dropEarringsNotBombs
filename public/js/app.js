@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#app",
     data: {
       earrings: {
+        availableStyles: availableStyles,
         size: '',
         frame: '',
         style: '',
@@ -28,23 +29,26 @@ var app = new Vue({
       }
     },
     methods: {
-
     },
     created: function() {
       console.log("Vue app instance created");
       var self = this;
 
-
-      //The colorpicker layer-changed listener
+      //Register all the layer listeners
       bus.$on('layer1', function (layer) {
-        console.log(layer);
         self.earrings.color.layer1 = layer;
       });
-
-      //The colorpicker layer-changed listener
       bus.$on('layer2', function (layer) {
-        console.log(layer);
         self.earrings.color.layer2 = layer;
+      });
+      bus.$on('layer3', function (layer) {
+        self.earrings.color.layer3 = layer;
+      });
+      bus.$on('layer4', function (layer) {
+        self.earrings.color.layer4 = layer;
+      });
+      bus.$on('layer5', function (layer) {
+        self.earrings.color.layer5 = layer;
       });
 
     },

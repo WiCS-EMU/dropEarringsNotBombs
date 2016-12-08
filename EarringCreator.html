@@ -17,10 +17,10 @@
                 <!-- Image row -->
                 <div class="col-md-6">
                   {{ earrings.color.layer1 }}
-                  <!-- {{ earrings.color.layer2 }}
+                  {{ earrings.color.layer2 }}
                   {{ earrings.color.layer3 }}
                   {{ earrings.color.layer4 }}
-                  {{ earrings.color.layer5 }} -->
+                  {{ earrings.color.layer5 }}
                 </div>
 
                 <!-- Dropdowns -->
@@ -35,7 +35,7 @@
                     </div>
 
                     <!-- Frames -->
-                    <div class="form-group" v-show="earrings.size != ''">
+                    <div class="form-group">
                         <label for="sizes">Frames</label>
                         <select v-model="earrings.frame" class="form-control">
                           <option>Silver </option>
@@ -44,25 +44,23 @@
                     </div>
 
                     <!-- Styles -->
-                    <div class="form-group" v-show="earrings.frame != ''">
+                    <div class="form-group">
                         <label for="styles">Styles</label>
                         <select v-model="earrings.style" class="form-control">
-                          <option>Classic </option>
+                          <option v-for="style in earrings.availableStyles" :value="style.value">{{ style.value }}</option>
                         </select>
                     </div>
 
                     <!-- Colors  -->
                     <template v-for="(layer, layerName) in earrings.color">
-                      <!-- v-show="earrings.color.layer != ''" -->
                       <div class="form-group">
-                          <label :for="layer">Layer {{ layerName }}</label>
+                          <label :for="layerName">{{ layerName }}</label>
                           <colorpicker :layername="layerName"></colorpicker>
                       </div>
                     </template>
 
-
                     <!-- Beads -->
-                    <div class="form-group" v-show="earrings.color.layer5">
+                    <div class="form-group">
                         <label for="beads"> Beads </label>
                         <select v-model="earrings.bead" class="form-control">
                           <option> Some </option>
@@ -78,8 +76,10 @@
 <!-- Jquery -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
-<!-- All available colors -->
-<script src="./public/js/color.js"></script>
+<!-- Data js files -->
+<script src="./public/js/data/colors.js"></script>
+<script src="./public/js/data/styles.js"></script>
+
 
 <!-- Bootstrap  -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
