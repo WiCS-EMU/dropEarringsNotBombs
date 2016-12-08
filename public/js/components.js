@@ -10,7 +10,7 @@ Vue.component('colorpicker', {
   },
   watch: {
     'currentcolor': function (currentcolor, oldcolor) {
-      console.log('currentcolor changed from %s to %s', oldcolor, currentcolor);
+      console.log(this.layername+' currentcolor changed from %s to %s', oldcolor, currentcolor);
       bus.$emit(this.layername, currentcolor);
     }
   },
