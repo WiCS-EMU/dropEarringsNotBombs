@@ -1,4 +1,4 @@
 var availableFrames = [
-  { value: 'Silver' },
-  { value: 'Gold' },
+  { value: 'Silver', src: './public/images/frame_silver.png' },
+  { value: 'Gold',  src: './public/images/frame_gold.png' },
 ]

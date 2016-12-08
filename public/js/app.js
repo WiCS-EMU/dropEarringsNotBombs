@@ -56,7 +56,6 @@ var app = new Vue({
       console.log("Vue app instance created");
       var self = this;
       this.registerLayers();
-
-
+      
     },
 });
