@@ -30,9 +30,6 @@ Vue.component('selector', {
       currentmodel: '',
     }
   },
-  created: function() {
-    console.log(this.model);
-  },
   watch: {
     'currentmodel': function(currentmodel, oldModel) {
       console.log(this.title+' model value changed');
