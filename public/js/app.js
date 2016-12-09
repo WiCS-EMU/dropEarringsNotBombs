@@ -12,11 +12,11 @@ var app = new Vue({
         style: '',
         color: {
           //Contains an array of the colors available for the given layer
-          layer1: availableColors,
-          layer2: availableColors,
-          layer3: availableColors,
-          layer4: availableColors,
-          layer5: availableColors,
+          layer1: '#150509',
+          layer2: 'orange',
+          layer3: 'grey',
+          layer4: 'blue',
+          layer5: '#b0134a',
         },
         bead: '',
       },
@@ -33,8 +33,8 @@ var app = new Vue({
       }
     },
     methods: {
+      //Register all the layer event bus listeners
       registerColorpickerListeners: function() {
-        //Register all the layer event bus listeners
         bus.$on('layer1', function (layer) {
           app.earrings.color.layer1 = layer;
         });
@@ -51,6 +51,7 @@ var app = new Vue({
           app.earrings.color.layer5 = layer;
         });
       },
+      //Register all selector event bus listeners
       registerSelectorListeners: function() {
         bus.$on('Frames', function (frame) {
           app.earrings.frame = frame;

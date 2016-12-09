@@ -16,29 +16,30 @@
 
                 <!-- Image row -->
                 <div class="col-md-6 earring-display">
-                  <img class="image1" height="500" width="240" :src="earrings.frame.src" />
-                  <img class="image2" height="280" width="230" :src="earrings.style.src" />
+                  <!-- <img class="image1" height="500" width="240" :src="earrings.frame.src" />
+                  <img class="image2" height="280" width="230" :src="earrings.style.src" /> -->
+                  <classic-earring :color="earrings.color"></classic-earring>
                 </div>
 
                 <!-- Dropdowns -->
                 <div class="col-md-3">
 
                     <!-- Sizes -->
-                    <selector :model="earrings.size" :available="earrings.availableSizes" title="Sizes"></selector>
+                    <selector :available="earrings.availableSizes" title="Sizes"></selector>
 
                     <!-- Frames -->
-                    <selector :model="earrings.frame" :available="earrings.availableFrames" title="Frames"></selector>
+                    <selector :available="earrings.availableFrames" title="Frames"></selector>
 
                     <!-- Styles -->
-                    <selector :model="earrings.style" :available="earrings.availableStyles" title="Styles"></selector>
+                    <selector :available="earrings.availableStyles" title="Styles"></selector>
 
                     <!-- Colors  -->
-                    <!-- <template v-for="(layer, layerName) in earrings.color">
+                    <template v-for="(layer, layerName) in earrings.color">
                       <div class="form-group">
                           <label :for="layerName">{{ layerName }}</label>
                           <colorpicker :layername="layerName"></colorpicker>
                       </div>
-                    </template> -->
+                    </template>
 
                     <!-- Beads -->
                     <!-- <selector :model="earrings.bead" :available="earrings.availableBeads" title="Beads"></selector> -->

@@ -1,5 +1,7 @@
-# dropEarringsNotBombs
-* On layers only remove if goes back up to size or whatever.  So don't hav eto reselect to try out different color types.
-
 #TODO
-updated readme
+  * Change color picker component to gallery format
+  * Change the earring creator to use svg images https://css-tricks.com/using-svg/
+  * Write a vue.js component for each earring type, and swap out earring types based on what is selected 
+
+#Useful tools
+  * .png files to .svg files http://pngtosvg.com/
