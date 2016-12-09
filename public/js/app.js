@@ -18,7 +18,7 @@ var app = new Vue({
           layer4: 'blue',
           layer5: '#b0134a',
         },
-        bead: '',
+        beads: '',
       },
     },
     computed: {
@@ -53,11 +53,14 @@ var app = new Vue({
       },
       //Register all selector event bus listeners
       registerSelectorListeners: function() {
-        bus.$on('Frames', function (frame) {
+        bus.$on('frames', function (frame) {
           app.earrings.frame = frame;
         });
-        bus.$on('Styles', function (style) {
+        bus.$on('styles', function (style) {
           app.earrings.style = style;
+        });
+        bus.$on('beads', function (beads) {
+          app.earrings.beads = beads.value;
         });
       },
     },

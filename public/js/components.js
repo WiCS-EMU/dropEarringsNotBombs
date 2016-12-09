@@ -17,8 +17,8 @@ Vue.component('selector', {
   },
   watch: {
     'currentmodel': function(currentmodel, oldModel) {
-      console.log(this.title+' model value changed');
-      bus.$emit(this.title, currentmodel);
+      console.log(this.title.toLowerCase()+' model value changed');
+      bus.$emit(this.title.toLowerCase(), currentmodel);
     }
   },
   template:
@@ -48,7 +48,7 @@ Vue.component('colorpicker', {
   },
   template:
     `
-      <select v-model="currentcolor">
+      <select v-model="currentcolor" class="form-control">
         <option v-for="color in availableColors" :value="color.value"> {{color.value}} </option>
       </select>
     `,
@@ -71,6 +71,7 @@ Vue.component('classic-earring', {
   },
   created: function() {
     self = this;
+    //register the layer listeners.  Changes the svg layers upon recieving from the bus
     bus.$on('layer1', function (layer) {
       self.layer1 = layer;
     });
@@ -85,6 +86,9 @@ Vue.component('classic-earring', {
     });
     bus.$on('layer5', function (layer) {
       self.layer5 = layer;
+    });
+    bus.$on('beads', function (beads) {
+      self.beads = beads;
     });
   },
   template:
