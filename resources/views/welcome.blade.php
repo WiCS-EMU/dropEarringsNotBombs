@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Drop Earrings Not Bombs</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -75,14 +75,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Drop Earrings Not Bombs 
+                   Drop Earrings Not Bombs
                 </div>
 
 		<div class="links">
-			<a href="/custom">Custom Earrings</a>
 			<a href="/about">About Us</a>
 			<a href="/mission">Our Mission</a>
-			<a href="/premade">Premade Earrings</a>
+      <a href="/custom">Custom Earrings</a>
+			<a href="/shop">Shop</a>
 		</div>
 
             </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Drop Earrings Not Bombs</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
                     <!-- Colors  -->
                     <template v-for="(layer, layerName) in earrings.color">
                       <div class="form-group">
-                          <label :for="layerName">{{ layerName }}</label>
+                          <label :for="layerName">@{{ layerName }}</label>
                           <colorpicker :layername="layerName"></colorpicker>
                       </div>
                     </template>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            {{ earrings }}
+            @{{ earrings }}
 
         </div>
     </div>
@@ -60,11 +60,11 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
 <!-- Data js files -->
-<script src="./public/js/data/colors.js"></script>
-<script src="./public/js/data/styles.js"></script>
-<script src="./public/js/data/frames.js"></script>
-<script src="./public/js/data/sizes.js"></script>
-<script src="./public/js/data/beads.js"></script>
+<script src="./js/data/colors.js"></script>
+<script src="./js/data/styles.js"></script>
+<script src="./js/data/frames.js"></script>
+<script src="./js/data/sizes.js"></script>
+<script src="./js/data/beads.js"></script>
 
 
 <!-- Bootstrap  -->
@@ -74,9 +74,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
 
 <!-- Vue Components-->
-<script src="./public/js/components.js"></script>
+<script src="./js/components.js"></script>
 
 <!-- Vue Instance -->
-<script src="./public/js/app.js"></script>
+<script src="./js/main.js"></script>
 
 </html>
