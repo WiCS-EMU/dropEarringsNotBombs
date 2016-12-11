@@ -62,6 +62,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
         </style>
     </head>
     <body>
@@ -78,12 +79,11 @@
                    Drop Earrings Not Bombs
                 </div>
 
-		<div class="links">
-			<a href="/about">About Us</a>
-			<a href="/mission">Our Mission</a>
-      <a href="/custom">Custom Earrings</a>
-			<a href="/shop">Shop</a>
-		</div>
+            		<div class="links">
+            			<a href="/about">About Us</a>
+                  <a href="/custom">Order Custom Earrings</a>
+            			<a href="/shop">Shop</a>
+            		</div>
 
             </div>
         </div>
